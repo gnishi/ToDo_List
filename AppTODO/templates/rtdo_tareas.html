@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+    <h1> RESULTADO DE LA BUSQUEDA </h1>
+    
+    <p>Estamos buscando tareas a partir de <b style="color: blue;">{{puntaje_buscado}}</b> puntos.</p>
+    <h3> Resultados de tu busqueda:</h3>
+    
+    {% if puntaje_resultado != "nada" %}
+    <ul>   
+        {% for puntos in puntaje_resultado %}
+            <li>{{puntos.nombre}} - {{puntos.detalle}} - {{puntos.puntos}} </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p> No hay resultados. </p>
+    {% endif %}
+{% endblock contenidoQueCambia %}

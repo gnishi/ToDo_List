@@ -1,0 +1,17 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+    <h1> BUSQUEDA DE TAREAS </h1>
+    
+    <form action="{% url 'Rtdo-tarea' %}" method="get">
+        <p>Cuantos puntos queres ganar? <input type="number" name="puntos">  </p>
+        <button type="submit"> Buscar </button>
+    </form>
+    <br><br>
+    <ul>   
+        {% for tarea in lista_tareas %}
+            <li>{{tarea.nombre}} - {{tarea.puntos}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock contenidoQueCambia %}

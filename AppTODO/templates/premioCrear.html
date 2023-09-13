@@ -1,0 +1,11 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+    <h1> CREACIÓN DE USUARIOS </h1>
+
+    <form action="{% url 'Crear-premio' %}" method="post">{% csrf_token %}
+        {{miFormulario.as_p}}
+        <button type="submit"> Enviar </button>
+    </form>
+    
+{% endblock contenidoQueCambia %}
